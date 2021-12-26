@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  mongo_unsecure:
+    image: mongo
+    ports:
+      - "27018:27017"
+    command: mongod --auth
