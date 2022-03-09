@@ -486,7 +486,11 @@ db.collection.createIndex({
    stok: 1, 
    name: 1
 })
-
+    
+// index hanya berlaku jika parameter sort sama dengan parameter saat membuat index atau kebalikannya
+db.collection.find().sort({stok: 1, name: 1}) // ini sort menggunakan index
+db.collection.find().sort({stok: -1, name: -1}) // ini tidak sort menggunakan index   
+    
 // urutan
 stok // ini kena index
 stok,name // ini kena index
